@@ -10,7 +10,7 @@
   ],
   "functions": {
     "api/index.ts": {
-      "runtime": "nodejs18.x",
+      "runtime": "nodejs@18",
       "includeFiles": "dist/ngxpress/**"
     }
   }
