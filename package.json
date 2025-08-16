@@ -5,10 +5,14 @@
     "ng": "ng",
     "dev": "ng serve",
     "build": "ng build --configuration production",
+    "build:with-db": "prisma generate && prisma migrate deploy && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start": "node dist/ngxpress/server/server.mjs",
-    "postbuild": "prisma generate"
+    "postbuild": "prisma generate",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:studio": "prisma studio --port 5555"
   },
   "prettier": {
     "overrides": [

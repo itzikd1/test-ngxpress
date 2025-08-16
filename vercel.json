@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/ngxpress/server/server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/dist/ngxpress/server/server.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/ngxpress/server/server.mjs"
+    }
+  ],
+  "buildCommand": "npm run build:with-db",
+  "installCommand": "npm install",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
