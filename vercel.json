@@ -1,21 +1,16 @@
 {
   "version": 2,
-  "builds": [
+  "public": true,
+  "name": "ngXpress",
+  "rewrites": [
     {
-      "src": "dist/ngxpress/server/server.mjs",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ],
-  "routes": [
-    {
-      "src": "^/api/(?<path>.*)",
-      "dest": "/api/$path"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/ngxpress/server/server.mjs"
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/ngXpress/**"
     }
-  ],
-  "buildCommand": "npm run build:with-db",
-  "installCommand": "npm install"
+  }
 }
