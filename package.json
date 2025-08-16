@@ -9,6 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start": "node dist/ngxpress/server/server.mjs",
+    "vercel-build": "npm install && npm run build:with-db",
     "postbuild": "prisma generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy",

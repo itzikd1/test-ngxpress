@@ -52,6 +52,7 @@
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
+            "index": "src/indexFile.html",
             "ssr": {
               "entry": "src/server.ts"
             }

@@ -2,16 +2,24 @@
   "version": 2,
   "public": true,
   "name": "ngXpress",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/ngxpress/browser/**",
+      "use": "@vercel/static"
     }
   ],
-  "functions": {
-    "api/index.ts": {
-      "runtime": "nodejs@18",
-      "includeFiles": "dist/ngxpress/**"
+  "routes": [
+    {
+      "src": "/api/.*",
+      "dest": "/api"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  }
+  ]
 }
