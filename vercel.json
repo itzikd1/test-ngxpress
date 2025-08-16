@@ -13,11 +13,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api"
+      "dest": "/dist/server/server.mjs"
     },
     {
       "src": "/(.*)",
-      "dest": "/server"
+      "dest": "/dist/server/server.mjs"
     }
   ],
   "buildCommand": "npm run build:with-db",
