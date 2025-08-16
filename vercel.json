@@ -12,7 +12,7 @@
       "dest": "/api/$path"
     },
     {
-      "src": "^/(?<path>.*)",
+      "src": "/(.*)",
       "dest": "/dist/ngxpress/server/server.mjs"
     }
   ],
